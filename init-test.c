@@ -7,11 +7,11 @@ int main()														// for testing only
 {   															// for testing only
 	printf("How many columns and rows: ");						// for testing only
   	int d = GetInt();											// for testing only
-  	int i = d;													// declare this in main()
-  	int j = d;													// declare this in main()
-  	int k = (d * d) -1;											// declare this in main()
-  	int board[i][j];											// declare this in main()
- 	int tile[k];												// declare this in main()
+  	int i = d;													
+  	int j = d;													
+  	int k = (d * d) -1;										
+  	int board[i][j];							
+ 	int tile[k];												
   	
   	board[i][j] = tile[k];
 	while (k > 0)

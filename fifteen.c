@@ -65,6 +65,7 @@ int main(int argc, string argv[])
     }
 
     // initialize the board
+  	
     init();
 
     // accept moves until game is won
@@ -132,6 +133,18 @@ void greet(void)
 void init(void)
 {
     // TODO
+    int i = d;								
+  	int j = d;													
+  	int k = (d * d) -1;											
+  	int board[i][j];											
+ 	int tile[k];
+    
+  	board[i][j] = tile[k];
+	while (k > 0)
+  	{
+  		for (i = 0; i < d; i++)
+			for (j = 0; j < d; j++, k--);
+	}						
 }
 
 /**
