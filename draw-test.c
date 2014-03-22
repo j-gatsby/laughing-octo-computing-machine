@@ -36,12 +36,12 @@ int main()														// for testing only
 			else if (odd == true && tile == 1)
 			{
 				board[i][j] = twoforone;
-				printf("board[%i][%i] = %i\n", i, j, board[i][j]);	// for testing only
+				printf("board[%d][%d] = %d\n", i, j, board[i][j]);	// for testing only
 			}
 			else
 			{
 				board[i][j] = tile;
-				printf("board[%i][%i] = %i\n", i, j, board[i][j]); 		// for testing only
+				printf("board[%d][%d] = %d\n", i, j, board[i][j]); 		// for testing only
 			}
 		}
 	}
@@ -55,19 +55,19 @@ int main()														// for testing only
     //for (rows = 0; rows < d; rows++)
     for (i = 0; i < d; i++)
     {
-    	printf("\n\n\n\n");
+    	printf("\n\n\n");
     	//for (columns = 0; columns < d; columns++, tile--)
     	for (j = 0; j < d; j++)
     	{
     		if (board[i][j] == 0)
     		{
-    			printf("    __    ");
+    			printf("   __   ");
     		}
     		else
     		{
-    			printf("    %2d    ", board[i][j]);
+    			printf("   %2d   ", board[i][j]);
     		}
     	}
     }
-    printf("\n\n\n\n");
+    printf("\n\n\n\n");  
 }
