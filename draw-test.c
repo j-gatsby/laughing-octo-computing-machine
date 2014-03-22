@@ -31,39 +31,41 @@ int main()														// for testing only
 			if (odd == true && tile == 2)
 			{
 				board[i][j] = onefortwo;
-				printf("board[%i][%i] = %i\n", i, j, tile);			// for testing only
+				printf("board[%d][%d] = %d\n", i, j, board[i][j]);	// for testing only
 			}
 			else if (odd == true && tile == 1)
 			{
 				board[i][j] = twoforone;
-				printf("board[%i][%i] = %i\n", i, j, tile);			// for testing only
+				printf("board[%i][%i] = %i\n", i, j, board[i][j]);	// for testing only
 			}
 			else
 			{
 				board[i][j] = tile;
-				printf("board[%i][%i] = %i\n", i, j, tile); 		// for testing only
+				printf("board[%i][%i] = %i\n", i, j, board[i][j]); 		// for testing only
 			}
 		}
 	}
 	// possibly set the winning conditions here, by:
 	// another for loop-for loop-count tiles back up, with special conditions if tile == 0  ??????
 																
-	int rows;
-    int columns;
-    tile = (d * d) -1;
+	//int rows;
+    //int columns;
+    //tile = (d * d) -1;
     
-    for (rows = 0; rows < d; rows++)
+    //for (rows = 0; rows < d; rows++)
+    for (i = 0; i < d; i++)
     {
     	printf("\n\n\n\n");
-    	for (columns = 0; columns < d; columns++, tile--)
+    	//for (columns = 0; columns < d; columns++, tile--)
+    	for (j = 0; j < d; j++)
     	{
-    		if (tile == 0)
+    		if (board[i][j] == 0)
     		{
     			printf("    __    ");
     		}
     		else
     		{
-    			printf("    %2i    ", tile);
+    			printf("    %2d    ", board[i][j]);
     		}
     	}
     }
