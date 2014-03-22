@@ -133,7 +133,6 @@ void greet(void)
 void init(void)
 {
     // TODO
-//	 int d = GetInt();								// for testing only
   	int i = d;													
   	int j = d;													
   	int tile = (d * d) - 1;	

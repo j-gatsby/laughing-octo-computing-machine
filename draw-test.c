@@ -15,6 +15,7 @@ int main()														// for testing only
   	int onefortwo = 1;
   	int twoforone = 2;							
  	bool odd;
+ 	
  	if (top % 2 == 1)
  	{
  		odd = true;
