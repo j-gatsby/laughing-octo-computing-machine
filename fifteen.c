@@ -89,8 +89,9 @@ int main(int argc, string argv[])
 
         // prompt for move
         printf("Tile to move: ");
-        int tile = GetInt();
-
+        //int tile = GetInt();		!!!!!!!!original code!!!!!!!!!
+		int mover = GetInt();
+		
         // move if possible, else report illegality
         if (!move(tile))
         {
@@ -172,6 +173,12 @@ void init(void)
 			}
 		}
 	}
+	
+	
+	for (i = 0; i < d; i++)
+	{
+		for (j = 0; j < d; j++, tile++)
+		{
 }
 	// possibly set the winning conditions here, by:
 	// another for loop-for loop-count tiles back up, with special conditions if tile == 0  ??????
@@ -183,15 +190,9 @@ void init(void)
 void draw(void)
 {
     // TODO
-   //int rows;
-    //int columns;
-    //tile = (d * d) -1;
-    
-    //for (rows = 0; rows < d; rows++)
     for (i = 0; i < d; i++)
     {
     	printf("\n\n\n");
-    	//for (columns = 0; columns < d; columns++, tile--)
     	for (j = 0; j < d; j++)
     	{
     		if (board[i][j] == 0)

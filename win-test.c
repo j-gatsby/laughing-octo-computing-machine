@@ -77,7 +77,7 @@ int main()																		// for testing only
 	printf("----------------------------------\n");									// for testing only
 	printf("|	Starting Configuration		|\n");									// for testing only
 	printf("----------------------------------\n");									// for testing only
-    for (i = 0; i < d; i++)
+    for (i = 0; i < d; i++) 
     {
     	printf("\n\n\n");
     	for (j = 0; j < d; j++)

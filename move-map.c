@@ -84,6 +84,12 @@ space[i][j]
 - tile to right	=	space[i][j + 1]
 					"if !boardright"
 					
+------------------------------------------------------------------------------
+	if (mover == tile above && !boardtop) || 
+		(mover == tile below && !boardbottom) || 
+		(mover == tile left && !boardleft) ||
+		(mover == tile right && !boardleft) 
+					
 -------------------------------------------------------------------------------
 
 if [i] == (d - 1)
@@ -111,7 +117,10 @@ if [j] == (d - d)
 "*****************************************************************************"
 *******************************************************************************
 
+When the space(0) value moves (swaps values with another position 
+on the board), explicitly declare 0 as the new value of that position.  
 			
+			 
 			
 			
 			
