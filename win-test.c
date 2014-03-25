@@ -16,6 +16,7 @@ int main()																		// for testing only
   	int twoforone = 2;							
  	bool odd;
  	int win[i][j];
+ 	int space;
  	printf(":::::::::::::::::::::::::::::::::::::::\n");
  	printf(":::::Starting Values for the Board:::::\n");
  	printf(":::::::::::::::::::::::::::::::::::::::\n");
@@ -85,6 +86,7 @@ int main()																		// for testing only
     		if (board[i][j] == 0)
     		{
     			printf("   __   ");
+    			space = board[i][j];
     		}
     		else
     		{
@@ -93,6 +95,7 @@ int main()																		// for testing only
     	}
     }
     printf("\n\n\n\n");  
+    printf("Space = %d\n\n", space)							// for testing only
     
     // draw winning board  															// for testing only
 	printf("``````````````````````````````````\n");									// for testing only
