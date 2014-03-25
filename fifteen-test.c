@@ -209,23 +209,42 @@ void init(void)
 void draw(void)
 {
     // TODO
+    printf("\n");
     for (int i = 0; i < d; i++)
     {
-    	printf("\n\n\n");
+    	printf("\n");
+    	for (int x = d; x > 0; x--)
+    		{
+    			printf(" ______ ");
+    		}
+    		printf("\n");
+    	for (int x = d; x > 0; x--)
+    		{
+    			printf("|      |");
+    		}
+    		printf("\n");
     	for (int j = 0; j < d; j++)
     	{
     		if (board[i][j] == 0)
     		{
     			space_i = i;
 				space_j = j;
-    			printf("   __   ");
+    			printf("|  __  |");
     		}
     		else
     		{
-    			printf("   %2d   ", board[i][j]);
+    			printf("|  %2d  |", board[i][j]);
     		}
+    		
     	}
+    	printf("\n");
+    	for (int x = d; x > 0; x--)
+    		{
+    			printf("|______|");
+    		}
+    		
     }
+    
     printf("\n\n\n\n");  
 }
 
@@ -331,24 +350,8 @@ bool move(int mover)
  */
 bool won(void)
 {
-    /* TODO
-    for (int i = 0; i < d; i++)
-	{
-		for (int j = 0; j < d; j++)
-		{		
-			if (board[i][j] == win[i][j])
-			{
-				printf("board[%d][%d] = %d ----> TRUE\n", i, j, board[i][j]);		// for testing only
-				return true;
-			}
-			else
-			{
-				printf("board[%d][%d] = %d ----> FALSE\n", i, j, board[i][j]);		// for testing only
-				return false;
-			}
-		}
-	}
-	return 0;*/
+    // TODO
+  
 	int winner = 0;
 
 	for (int i = 0; i < d; i++)
