@@ -142,6 +142,8 @@ void init(void)
   	int onefortwo = 1;
   	int twoforone = 2;							
  	bool odd;
+ 	int space_i;
+ 	int space_j;
  	
  	if (top % 2 == 1)
  	{
@@ -209,6 +211,8 @@ void draw(void)
     	{
     		if (board[i][j] == 0)
     		{
+    			space_i = i;
+				space_j = j;
     			printf("   __   ");
     		}
     		else
