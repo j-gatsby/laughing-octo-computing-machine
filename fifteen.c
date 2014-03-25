@@ -238,7 +238,20 @@ bool move(int tile)
 bool won(void)
 {
     // TODO
-    return false;
+    for (i = 0; i < d; i++)
+	{
+		for (j = 0; j < d; j++)
+		{		
+			if (board[i][j] == win[i][j])
+			{
+				return true;
+			}
+			else
+			{
+				    return false;
+			}
+		}
+	}
 }
 
 /**
