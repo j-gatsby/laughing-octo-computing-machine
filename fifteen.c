@@ -173,13 +173,25 @@ void init(void)
 			}
 		}
 	}
-	
-	
+	// create win values
+	printf("\n");
+	tile = 1;
 	for (i = 0; i < d; i++)
 	{
 		for (j = 0; j < d; j++, tile++)
-		{
-}
+		{			
+			if (tile == d * d)
+			{
+				win[i][j] = 0;
+				printf("win[%d][%d] = %d\n", i, j, win[i][j]);						// for testing only
+			}
+			else
+			{
+				win[i][j] = tile;
+				printf("win[%d][%d] = %d\n", i, j, win[i][j]);						// for testing only
+			}	
+		}		
+	}
 	// possibly set the winning conditions here, by:
 	// another for loop-for loop-count tiles back up, with special conditions if tile == 0  ??????
 										
