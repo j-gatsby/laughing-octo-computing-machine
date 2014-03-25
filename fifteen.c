@@ -320,10 +320,14 @@ bool move(int mover)
 					board[i][j] = tile_right;
 					return true;
 				}
+				else
+				{
+					return false;
+				}
 			}
 		}
 	}	
-	return false;
+	return 0;
 }
 
 /**
