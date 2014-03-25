@@ -93,7 +93,8 @@ int main(int argc, string argv[])
 		int mover = GetInt();
 		
         // move if possible, else report illegality
-        if (!move(tile))
+        // if (!move(tile))			!!!!!!!!!!original code!!!!!!!!!!
+        if (!move(mover))
         {
             printf("\nIllegal move.\n");
             usleep(500000);
