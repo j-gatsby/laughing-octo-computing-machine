@@ -336,13 +336,15 @@ bool move(int mover)
 bool won(void)
 {
     // TODO
-    for (int i = 0; i < d; i++)
+   int winner = 0;
+
+	for (int i = 0; i < d; i++)
 	{
 		for (int j = 0; j < d; j++)
 		{		
 			if (board[i][j] == win[i][j])
 			{
-				return true;
+				winner++;
 			}
 			else
 			{
@@ -350,7 +352,15 @@ bool won(void)
 			}
 		}
 	}
-	return 0;
+		
+	if (winner == d*d)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 /**
