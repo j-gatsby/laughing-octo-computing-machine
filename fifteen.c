@@ -40,8 +40,8 @@ int d;
 
 // variables added in by TJ:		
 																
-  	int space_i;
-  	int space_j;
+int space_i;
+int space_j;
 
 // prototypes
 void clear(void);
@@ -168,17 +168,14 @@ void init(void)
 			if (odd == true && tile == 2)
 			{
 				board[i][j] = onefortwo;
-			//	printf("board[%d][%d] = %d\n", i, j, board[i][j]);	// for testing only
 			}
 			else if (odd == true && tile == 1)
 			{
 				board[i][j] = twoforone;
-			//	printf("board[%d][%d] = %d\n", i, j, board[i][j]);	// for testing only
 			}
 			else
 			{
 				board[i][j] = tile;
-			//	printf("board[%d][%d] = %d\n", i, j, board[i][j]); 		// for testing only
 			}
 		}
 	}
@@ -192,26 +189,20 @@ void init(void)
 			if (tile == d * d)
 			{
 				win[i][j] = 0;
-				printf("win[%d][%d] = %d\n", i, j, win[i][j]);						// for testing only
 			}
 			else
 			{
 				win[i][j] = tile;
-				printf("win[%d][%d] = %d\n", i, j, win[i][j]);						// for testing only
-			}	
+			}
 		}		
 	}
 }
-	// possibly set the winning conditions here, by:
-	// another for loop-for loop-count tiles back up, with special conditions if tile == 0  ??????
-										
 
 /**
  * Prints the board in its current state.
  */
 void draw(void)
 {
-
     // TODO
     for (int i = 0; i < d; i++)
     {
