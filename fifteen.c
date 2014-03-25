@@ -31,8 +31,17 @@
 // board, whereby board[i][j] represents row i and column j
 int board[MAX][MAX];
 
+// Added in by TJ:
+// winning board configuration, whereby win[i][j] represents row i and column j
+int win[MAX][MAX];
+
 // board's dimension
-int d;
+int d;  	
+
+// variables added in by TJ:		
+																
+  	int space_i;
+  	int space_j;
 
 // prototypes
 void clear(void);
@@ -45,6 +54,8 @@ void save(void);
 
 int main(int argc, string argv[])
 {
+
+  	
     // greet player
     greet();
 
@@ -135,16 +146,11 @@ void greet(void)
 void init(void)
 {
     // TODO
-  	int i = d;													
-  	int j = d;													
-  	int tile = (d * d) - 1;	
-  	int top = (d * d) - 1;									
-  	int board[i][j];
+	int tile = (d * d) - 1;	
+  	int top = (d * d) - 1;	
   	int onefortwo = 1;
   	int twoforone = 2;							
  	bool odd;
- 	int space_i;
- 	int space_j;
  	
  	if (top % 2 == 1)
  	{
@@ -155,9 +161,9 @@ void init(void)
  		odd = false;
  	}
  		
-	for (i = 0; i < d; i++)
+	for (int i = 0; i < d; i++)
 	{
-		for (j = 0; j < d; j++, tile--)
+		for (int j = 0; j < d; j++, tile--)
 		{
 			if (odd == true && tile == 2)
 			{
@@ -179,9 +185,9 @@ void init(void)
 	// create win values
 	printf("\n");
 	tile = 1;
-	for (i = 0; i < d; i++)
+	for (int i = 0; i < d; i++)
 	{
-		for (j = 0; j < d; j++, tile++)
+		for (int j = 0; j < d; j++, tile++)
 		{			
 			if (tile == d * d)
 			{
@@ -195,6 +201,7 @@ void init(void)
 			}	
 		}		
 	}
+}
 	// possibly set the winning conditions here, by:
 	// another for loop-for loop-count tiles back up, with special conditions if tile == 0  ??????
 										
@@ -204,11 +211,13 @@ void init(void)
  */
 void draw(void)
 {
+	int space_i;
+	int space_j;
     // TODO
-    for (i = 0; i < d; i++)
+    for (int i = 0; i < d; i++)
     {
     	printf("\n\n\n");
-    	for (j = 0; j < d; j++)
+    	for (int j = 0; j < d; j++)
     	{
     		if (board[i][j] == 0)
     		{
@@ -233,9 +242,9 @@ void draw(void)
 bool move(int mover)
 {
     // TODO
-    for (i = 0; i < d; i++)
+    for (int i = 0; i < d; i++)
 	{
-		for (j = 0; j < d; j++)
+		for (int j = 0; j < d; j++)
 		{
 			if (i == space_i && j == space_j)
 			{
@@ -247,7 +256,7 @@ bool move(int mover)
 				int tile_below;
 				int tile_right;
 				int tile_left;
-				if space_i == (d - 1)
+				if (space_i == (d - 1))
 				{
 					boardbottom = true;
 				}
@@ -257,7 +266,7 @@ bool move(int mover)
 					tile_below = board[i + 1][j];
 				}
 
-				if space_i == (d - d)
+				if (space_i == (d - d))
 				{
 					boardtop = true;
 				}
@@ -267,7 +276,7 @@ bool move(int mover)
 					tile_above = board[i - 1][j];
 				}
 
-				if space_j == (d - 1) 
+				if (space_j == (d - 1))
 				{
 					boardright = true;
 				}
@@ -277,7 +286,7 @@ bool move(int mover)
 					tile_right = board[i][j + 1];
 				}
 
-				if space_j == (d - d)
+				if (space_j == (d - d))
 				{
 					boardleft = true;
 				}
@@ -311,13 +320,10 @@ bool move(int mover)
 					board[i][j] = tile_right;
 					return true;
 				}
-				else
-				{
-					return false;
-				}
 			}
 		}
 	}	
+	return false;
 }
 
 /**
@@ -327,20 +333,17 @@ bool move(int mover)
 bool won(void)
 {
     // TODO
-    for (i = 0; i < d; i++)
+    for (int i = 0; i < d; i++)
 	{
-		for (j = 0; j < d; j++)
+		for (int j = 0; j < d; j++)
 		{		
 			if (board[i][j] == win[i][j])
 			{
 				return true;
 			}
-			else
-			{
-				return false;
-			}
 		}
 	}
+	return false;
 }
 
 /**
