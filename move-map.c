@@ -72,46 +72,51 @@ space[i][j]
 "*****************************************************************************"
 			
 "Possible Moves"
-- tile above	=	space[i - 1][j]
-					"if !boardtop"
+tile_above	=	space[i - 1][j]
+					//valid "if !boardtop"
 					
-- tile below	=	space[i + 1][j]
-					"if !boardbottom"
+tile_below	=	space[i + 1][j]
+					//valid "if !boardbottom"
 					
-- tile to left 	=	space[i][j - 1]
-					"if !boardleft"
+tile_left 	=	space[i][j - 1]
+					//valid "if !boardleft"
 					
-- tile to right	=	space[i][j + 1]
-					"if !boardright"
-					
-------------------------------------------------------------------------------
-	if (mover == tile above && !boardtop) || 
-		(mover == tile below && !boardbottom) || 
-		(mover == tile left && !boardleft) ||
-		(mover == tile right && !boardleft) 
-					
--------------------------------------------------------------------------------
-
-if [i] == (d - 1)
+tile_right	=	space[i][j + 1]
+					//valid "if !boardright"
+-------------------------------------------------------------------
+if space[i] == (d - 1)
 {
 	boardbottom = true;
 }
 
-if [i] == (d - d)
+if space[i] == (d - d)
 {
 	boardtop = true;
 }
 
-if [j] == (d - 1) 
+if space[j] == (d - 1) 
 {
 	boardright = true;
 }
 
-if [j] == (d - d)
+if space[j] == (d - d)
 {
 	boardleft = true;
 }
-					
+				
+------------------------------------------------------------------------------
+	if ((!boardtop && (mover == tile_above)) || 
+		(!boardbottom && (mover == tile_below)) || 
+		(!boardleft && (mover == tile_left)) ||
+		(!boardright && (mover == tile_right)))
+		{
+			"swap mover with space"
+		}
+	else
+	{
+		return "move not valid"
+	}
+			
 					
 *******************************************************************************
 "*****************************************************************************"
