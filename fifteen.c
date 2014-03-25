@@ -211,8 +211,7 @@ void init(void)
  */
 void draw(void)
 {
-	int space_i;
-	int space_j;
+
     // TODO
     for (int i = 0; i < d; i++)
     {
@@ -296,25 +295,25 @@ bool move(int mover)
 					tile_left = board[i][j - 1];
 				}
 				
-				if (!boardtop && (tile_above == mover))
+				if (!boardtop && mover == tile_above)
 				{
 					board[i - 1][j] = 0;
 					board[i][j] = tile_above;
 					return true;
 				}
-				else if (!boardbottom && (tile_below  == mover))
+				else if (!boardbottom && mover == tile_below)
 				{
 					board[i + 1][j] = 0;
 					board[i][j] = tile_below;
 					return true;
 				}
-				else if (!boardleft && (tile_left == mover))
+				else if (!boardleft && mover == tile_left)
 				{
 					board[i][j - 1] = 0;
 					board[i][j] = tile_left;
 					return true;
 				}
-				else if (!boardright && (tile_right == mover))
+				else if (!boardright && mover == tile_right)
 				{
 					board[i][j + 1] = 0;
 					board[i][j] = tile_right;
@@ -345,9 +344,13 @@ bool won(void)
 			{
 				return true;
 			}
+			else
+			{
+				return false;
+			}
 		}
 	}
-	return false;
+	return 0;
 }
 
 /**
