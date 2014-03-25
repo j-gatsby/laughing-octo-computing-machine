@@ -95,7 +95,7 @@ int main()																		// for testing only
     	}
     }
     printf("\n\n\n\n");  
-    printf("Space = %d\n\n", space)							// for testing only
+    printf("Space = %d\n\n", space);							// for testing only
     
     // draw winning board  															// for testing only
 	printf("``````````````````````````````````\n");									// for testing only

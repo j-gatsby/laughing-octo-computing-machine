@@ -70,45 +70,76 @@ space[i][j]
 "*****************************************************************************"			
 *******************************************************************************
 "*****************************************************************************"
+-------------------------------------------------------------------------------
+
+when giving 0 the symbol "_" save the following:
+space_i = i;
+space_j = j;
+-------------------------------------------------------------------------------
+
+int space_i;
+int space_j;
+bool boardtop;
+bool boardbottom;
+bool boardleft;
+bool boardright;
 			
-"Possible Moves"
-tile_above	=	space[i - 1][j]
-					//valid "if !boardtop"
-					
-tile_below	=	space[i + 1][j]
-					//valid "if !boardbottom"
-					
-tile_left 	=	space[i][j - 1]
-					//valid "if !boardleft"
-					
-tile_right	=	space[i][j + 1]
-					//valid "if !boardright"
+			
 -------------------------------------------------------------------
-if space[i] == (d - 1)
+if space_i == (d - 1)
 {
 	boardbottom = true;
 }
+else
+{
+	boardbottom = false;
+}
 
-if space[i] == (d - d)
+if space_i == (d - d)
 {
 	boardtop = true;
 }
+else
+{
+	boardtop = false;
+}
 
-if space[j] == (d - 1) 
+if space_j == (d - 1) 
 {
 	boardright = true;
 }
+else
+{
+	boardright = false;
+}
 
-if space[j] == (d - d)
+if space_j == (d - d)
 {
 	boardleft = true;
 }
+else
+{
+	boardleft = false;
+}
 				
+-------------------------------------------------------------------------------
+"Possible Moves"
+int tile_above	=	board[i - 1][j]
+					//valid "if !boardtop"
+					
+int tile_below	=	board[i + 1][j]
+					//valid "if !boardbottom"
+					
+int tile_left 	=	board[i][j - 1]
+					//valid "if !boardleft"
+					
+int tile_right	=	board[i][j + 1]
+					//valid "if !boardright"
 ------------------------------------------------------------------------------
-	if ((!boardtop && (mover == tile_above)) || 
-		(!boardbottom && (mover == tile_below)) || 
-		(!boardleft && (mover == tile_left)) ||
-		(!boardright && (mover == tile_right)))
+	if ((!boardtop && (tile_above == mover)) || 
+		(!boardbottom && (tile_below  == mover)) || 
+		(!boardleft && (tile_left == mover)) ||
+		(!boardright && (tile_right == mover)))
 		{
 			"swap mover with space"
 		}
