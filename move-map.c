@@ -67,7 +67,19 @@ space[i][j]
 		// space[i][j + 1]
 			- tile to right
 
-"*****************************************************************************"			
+"*****************************************************************************"		
+"Possible Moves"
+int tile_above	=	board[i - 1][j]
+					//valid "if !boardtop"
+					
+int tile_below	=	board[i + 1][j]
+					//valid "if !boardbottom"
+					
+int tile_left 	=	board[i][j - 1]
+					//valid "if !boardleft"
+					
+int tile_right	=	board[i][j + 1]
+					//valid "if !boardright"	
 *******************************************************************************
 "*****************************************************************************"
 -------------------------------------------------------------------------------
@@ -83,7 +95,10 @@ bool boardtop;
 bool boardbottom;
 bool boardleft;
 bool boardright;
-			
+int tile_above;
+int tile_below;
+int tile_right;
+int tile_left;
 			
 -------------------------------------------------------------------
 if space_i == (d - 1)
@@ -93,7 +108,9 @@ if space_i == (d - 1)
 else
 {
 	boardbottom = false;
+	tile_below = board[i + 1][j];
 }
+
 
 if space_i == (d - d)
 {
@@ -102,7 +119,9 @@ if space_i == (d - d)
 else
 {
 	boardtop = false;
+	tile_above = board[i - 1][j];
 }
+
 
 if space_j == (d - 1) 
 {
@@ -111,7 +130,9 @@ if space_j == (d - 1)
 else
 {
 	boardright = false;
+	tile_right = board[i][j + 1];
 }
+
 
 if space_j == (d - d)
 {
@@ -120,21 +141,11 @@ if space_j == (d - d)
 else
 {
 	boardleft = false;
+	tile_left = board[i][j - 1];
 }
 				
 -------------------------------------------------------------------------------
-"Possible Moves"
-int tile_above	=	board[i - 1][j]
-					//valid "if !boardtop"
-					
-int tile_below	=	board[i + 1][j]
-					//valid "if !boardbottom"
-					
-int tile_left 	=	board[i][j - 1]
-					//valid "if !boardleft"
-					
-int tile_right	=	board[i][j + 1]
-					//valid "if !boardright"
+
 ------------------------------------------------------------------------------
 	if ((!boardtop && (tile_above == mover)) || 
 		(!boardbottom && (tile_below  == mover)) || 
