@@ -230,10 +230,94 @@ void draw(void)
  * If tile borders empty space, moves tile and returns true, else
  * returns false. 
  */
-bool move(int tile)
+bool move(int mover)
 {
     // TODO
-    return false;
+    for (i = 0; i < d; i++)
+	{
+		for (j = 0; j < d; j++)
+		{
+			if (i == space_i && j == space_j)
+			{
+				bool boardtop;
+				bool boardbottom;
+				bool boardleft;
+				bool boardright;
+				int tile_above;
+				int tile_below;
+				int tile_right;
+				int tile_left;
+				if space_i == (d - 1)
+				{
+					boardbottom = true;
+				}
+				else
+				{
+					boardbottom = false;
+					tile_below = board[i + 1][j];
+				}
+
+				if space_i == (d - d)
+				{
+					boardtop = true;
+				}
+				else
+				{
+					boardtop = false;
+					tile_above = board[i - 1][j];
+				}
+
+				if space_j == (d - 1) 
+				{
+					boardright = true;
+				}
+				else
+				{
+					boardright = false;
+					tile_right = board[i][j + 1];
+				}
+
+				if space_j == (d - d)
+				{
+					boardleft = true;
+				}
+				else
+				{
+					boardleft = false;
+					tile_left = board[i][j - 1];
+				}
+				
+				if (!boardtop && (tile_above == mover))
+				{
+					board[i - 1][j] = 0;
+					board[i][j] = tile_above;
+					return true;
+				}
+				else if (!boardbottom && (tile_below  == mover))
+				{
+					board[i + 1][j] = 0;
+					board[i][j] = tile_below;
+					return true;
+				}
+				else if (!boardleft && (tile_left == mover))
+				{
+					board[i][j - 1] = 0;
+					board[i][j] = tile_left;
+					return true;
+				}
+				else if (!boardright && (tile_right == mover))
+				{
+					board[i][j + 1] = 0;
+					board[i][j] = tile_right;
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+	}	
 }
 
 /**
@@ -253,7 +337,7 @@ bool won(void)
 			}
 			else
 			{
-				    return false;
+				return false;
 			}
 		}
 	}
